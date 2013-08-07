@@ -1,0 +1,29 @@
+<section class="posts">
+  <h1>Posts</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Created At</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= post.id %></td>
+          <td><%= post.title %></td>
+          <td><%= post.created_at %></td>
+          <td>
+            <a href="/posts/<%= post.id %>/edit">Edit</a>
+            <form action="/posts<%= post.id %>/delete" method="POST">
+              <input type="submit">
+            </form>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
+<a href="/posts/new">Create Post</a>

@@ -1,0 +1,9 @@
+<label for="title">Title</label>
+<%= input_helper('text', 'post[title]', 'title', @post.try(:title)) %>
+<br>
+<label for="body">Body</label>
+<textarea id="body" name="post[body]">
+  <%= @post.try(:body) %>
+</textarea>
+<br>
+<input type="submit">
